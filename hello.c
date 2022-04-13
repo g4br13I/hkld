@@ -25,5 +25,5 @@ static int func(struct module *teste, int switchh, void *blabla) {
     return(retorno);
 }
 
-static moduledata_t hello = {"hello", func, NULL};
-DECLARE_MODULE(hello, func, SI_SUB_KLD, SI_ORDER_MIDDLE);
+static moduledata_t hellou = {"hello", func, NULL};
+DECLARE_MODULE(hello, hellou, SI_SUB_KLD, SI_ORDER_MIDDLE);
