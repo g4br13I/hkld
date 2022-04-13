@@ -1,22 +1,22 @@
 /*
-** FreeBSD hello kernel module
+** FreeBSD hello KLD
 ** github.com/g4br13I
 */
 
+#include <sys/param.h>
 #include <sys/module.h>
 #include <sys/kernel.h>
 #include <sys/systm.h>
-#include <sys/param.h>
 
-#define retorno 0
+int retorno = 0;
 
-static int func(module_t teste __unused, int switchh, void *blabla __unused) {
+static int func(struct module *teste, int switchh, void *blabla) {
     switch(switchh) {
     case MOD_LOAD:
-        uprintf("\033[92m[+] hello kernel module loaded\033[0m\n");
+        uprintf("[+] hello kernel module loaded\n");
         break;
     case MOD_UNLOAD:
-        uprintf("\033[91m[-]\033[0m hello kernel module unloaded\033[0m\n");
+        uprintf("[-] hello kernel module unloaded\n");
         break;
     default:
         retorno = EOPNOTSUPP;
@@ -26,4 +26,4 @@ static int func(module_t teste __unused, int switchh, void *blabla __unused) {
 }
 
 static moduledata_t hello = {"hello", func, NULL};
-DECLARE_MODULE(hello, func, SI_SUB_DRIVERS, SI_ORDER_MIDDLE);
+DECLARE_MODULE(hello, func, SI_SUB_KLD, SI_ORDER_MIDDLE);
