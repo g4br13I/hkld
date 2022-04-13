@@ -8,9 +8,9 @@
 #include <sys/kernel.h>
 #include <sys/systm.h>
 
-int retorno = 0;
-
+// carregamento do modulo
 static int func(struct module *teste, int switchh, void *blabla) {
+    int retorno=0;
     switch(switchh) {
     case MOD_LOAD:
         uprintf("[+] hello kernel module loaded\n");
