@@ -12,7 +12,6 @@
 #include <sys/kernel.h>
 #include <sys/systm.h>
 
-// carregamento do modulo
 static int func(struct module_t tweste, int switchh, void *blabla) {
     int retorno=0;
     switch(switchh) {
