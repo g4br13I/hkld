@@ -1,3 +1,4 @@
+
 /*
 ** FreeBSD hello KLD
 ** github.com/g4br13I
@@ -25,4 +26,6 @@ static int func(struct module_t tweste, int switchh, void *blabla) {
 }
 
 static moduledata_t hellou = {"hello", func, NULL};
-DECLARE_MODULE(hello, hellou, SI_SUB_KLD, SI_ORDER_MIDDLE);
+
+MODULE_VERSION(hello, 1);
+DECLARE_MODULE(hello, hellou, SI_SUB_DRIVERS, SI_ORDER_MIDDLE);
