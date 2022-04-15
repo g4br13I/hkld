@@ -1,10 +1,6 @@
 /*
 ** FreeBSD hello KLD
 ** github.com/g4br13I
-------------------------
-** gcc hello.c -o hello
-** make
-** kldload -v ./hello.ko
 */
 
 #include <sys/param.h>
