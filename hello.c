@@ -13,10 +13,10 @@ static int func(struct module_t tweste, int switchh, void *blabla) {
     int retorno=0;
     switch(switchh) {
     case MOD_LOAD:
-        uprintf("[+] hello kernel module loaded\n");
+        uprintf("hello kernel module loaded\n");
         break;
     case MOD_UNLOAD:
-        uprintf("[-] hello kernel module unloaded\n");
+        uprintf("hello kernel module unloaded\n");
         break;
     default:
         retorno = EOPNOTSUPP;
