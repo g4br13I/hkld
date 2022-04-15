@@ -1,1 +1,6 @@
 FreeBSD hello kernel module
+
+[*] load
+ |- kldload hello.ko
+[*] unload
+ |- kldunload hello.ko
